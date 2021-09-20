@@ -1,0 +1,10 @@
+# Download and install pip for use with Python
+# Must be done from an Administrator Console
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+
+# Verify the installation worked
+pip help
+pip --version
+
+

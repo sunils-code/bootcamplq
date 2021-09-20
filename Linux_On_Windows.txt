@@ -1,0 +1,14 @@
+# Install Windows Subsystem for Linux (WSL)  and Virtual Machine Platform via command-line:
+
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# Restart here
+# shutdown -r
+
+# Install and configure Ubuntu
+wsl --install -d Ubuntu
+wsl –set-default-version 2
+
+
