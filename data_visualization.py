@@ -30,7 +30,7 @@ stockprice1 = dr.DataReader(stock1,"yahoo",begindate,now)
 stockprice2 = dr.DataReader(stock2,"yahoo",begindate,now)  
 stockprice3 = dr.DataReader(stock3,"yahoo",begindate,now)    
 
-# Test datasets
+# Verify the datasets and perform necessary data cleaning operations before visualization
 stockprice1
 stockprice1.columns
 stockprice1.head()
