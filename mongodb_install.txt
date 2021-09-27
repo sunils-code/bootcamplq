@@ -1,0 +1,52 @@
+###  MongoDB Installation
+# PS1="\u@\h:\w\$ "
+
+# Install Ubuntu Updates
+sudo su
+apt update -y | apt upgrade -y
+
+
+### Option 1: Manual install of a stable release:
+
+# Import Public GPG key
+curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+# Create mongodb-org-4.4.list file and update the system
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+apt update -y | apt upgrade -y
+
+# Install MongoDB
+apt install mongodb-org -y
+
+# Start & Enable MongoDB
+systemctl start mongod
+systemctl status mongod
+systemctl enable mongod
+
+# Verify MongoDB is running
+mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+
+
+===   
+
+ 
+### Option 2: Use installation instructions on docs.mongodb.com website for Ubuntu:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,12 @@
 ###  Hadoop Installation
 # PS1="\u@\h:\w\$ "
 
-# Configure SSH
+# Install Ubuntu Updates
 sudo su
+apt autoremove --purge
+apt update -y | apt upgrade -y
+
+# Configure SSH
 cd
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -104,7 +108,8 @@ jps
 # Browse the different options / features available and verify the number of "Live Nodes"
 http://127.0.0.1:9870
 
-
+# Reboot the server when finished.
+# reboot
 
 
 
