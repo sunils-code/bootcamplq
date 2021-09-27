@@ -1,0 +1,121 @@
+###  Hadoop Installation
+# PS1="\u@\h:\w\$ "
+
+# Configure SSH
+sudo su
+cd
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+
+# Download Hadoop
+mkdir hadoop
+cd hadoop/
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+
+# Extract package
+tar -xvf hadoop-3.2.2.tar.gz
+
+# Add the following lines at the end of the ~/.bashrc file
+export HADOOP_HOME=/root/hadoop/hadoop-3.2.2
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HDFS_NAMENODE_USER="root"
+export HDFS_DATANODE_USER="root"
+export HDFS_SECONDARYNAMENODE_USER="root"
+export YARN_RESOURCEMANAGER_USER="root"
+export YARN_NODEMANAGER_USER="root"
+
+# Persist the changes from the .bashrc file
+source ~/.bashrc
+
+# Add the following line to the file: $HADOOP_HOME/etc/hadoop/hadoop-env.sh 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Add the following text to $HADOOP_HOME/etc/hadoop/core-site.xml (between the <configuration> and </configuration> tags
+<property>
+  <name>hadoop.tmp.dir</name>
+  <value>/tempdata</value>
+</property>
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://127.0.0.1:9000</value>
+</property>
+
+# Add the following line to the file: $HADOOP_HOME/etc/hadoop/hdfs-site.xml (between the <configuration> and </configuration> tags
+<property>
+  <name>dfs.data.dir</name>
+  <value>/home/hiberstack/dfsdata/namenode</value>
+</property>
+<property>
+  <name>dfs.data.dir</name>
+  <value>/home/hiberstack/dfsdata/datanode</value>
+</property>
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+</property>
+
+
+# Add the following line to the file: $HADOOP_HOME/etc/hadoop/mapred-site.xml (between the <configuration> and </configuration> tags
+<property> 
+  <name>mapreduce.framework.name</name> 
+  <value>yarn</value> 
+</property>
+
+# Add the following line to the file: $HADOOP_HOME/etc/hadoop/yarn-site.xml (between the <configuration> and </configuration> tags
+<property>
+  <name>yarn.nodemanager.aux-services</name>
+  <value>mapreduce_shuffle</value>
+</property>
+<property>
+  <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+  <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
+<property>
+  <name>yarn.resourcemanager.hostname</name>
+  <value>127.0.0.1</value>
+</property>
+<property>
+  <name>yarn.acl.enable</name>
+  <value>0</value>
+</property>
+<property>
+  <name>yarn.nodemanager.env-whitelist</name>   
+  <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+</property>
+
+
+# Format the NameNode
+hdfs namenode -format
+
+# Start the Hadoop Services and verify they are running
+$HADOOP_HOME/sbin/start-all.sh
+jps
+
+# Access Hadoop NameNode UI from Browser 
+# Browse the different options / features available and verify the number of "Live Nodes"
+http://127.0.0.1:9870
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
