@@ -1,0 +1,14 @@
+sudo su
+
+apt remove ssh openssh-server openssh-client -y
+apt autoremove --purge
+
+# remove .ssh for student and root accounts
+cd
+rm -r .ssh
+
+apt install ssh openssh-server openssh-client -y
+
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
