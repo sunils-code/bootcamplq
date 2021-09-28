@@ -111,6 +111,10 @@ http://127.0.0.1:9870
 # Reboot the server when finished.
 # reboot
 
+### Optional MapReduce Tutorial Exercise:  
+# If time permits, you may perform a MapReduce exercise using the instructions on the Apache Hadoop webiste:
+https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+
 
 
 
