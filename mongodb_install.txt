@@ -26,6 +26,8 @@ systemctl enable mongod
 # Verify MongoDB is running
 mongo --eval 'db.runCommand({ connectionStatus: 1 })'
 
+# Optional Step: (Creating a MongoDB Database with the CLI)
+https://www.mongodb.com/basics/create-database
 
 ===   
 
