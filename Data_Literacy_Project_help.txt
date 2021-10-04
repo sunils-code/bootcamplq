@@ -1,0 +1,8 @@
+Data Literacy Project Resources:
+
+https://www.how2shout.com/linux/install-mongodb-compass-gui-in-ubuntu-20-04-lts-linux/
+
+https://docs.mongodb.com/guides/
+
+https://www.mongodb.com/developer/how-to/FARM-Stack-FastAPI-React-MongoDB/
+
