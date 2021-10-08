@@ -1,0 +1,21 @@
+Cloud-based Development Project Resources:
+
+AWS Free Resources
+https://aws.amazon.com/free
+
+AWS Pricing Calculator
+https://calculator.aws/#/
+
+Amazon RDS
+https://aws.amazon.com/rds/
+
+Amazon DynamoDB
+https://aws.amazon.com/dynamodb/
+
+Amazon DocumentDB (MongoDB Compatible)
+https://aws.amazon.com/documentdb/
+
+AWS Certifications:
+https://aws.amazon.com/certification/
+
+
