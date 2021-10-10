@@ -1,0 +1,15 @@
+Database Implementation Project Resources:
+
+Microsoft Learning: 10985 Introduction to SQL Databases (Build)
+https://github.com/MicrosoftLearning/10985-Introduction_to_SQL_Databases-
+
+AdventureWorks Database Install Script:
+https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/adventure-works/oltp-install-script
+
+SQL Select Tutorial:
+https://github.com/neiltucker/bootcamplq/blob/main/SQL_SELECT_Tutorial.pdf
+
+Employee Table for SQL Select Tutorial:
+https://github.com/neiltucker/bootcamplq/blob/main/employeetable.csv
+
+
