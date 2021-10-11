@@ -5,7 +5,7 @@
 
 ### This looping operation will install the modules not already configured.
 import importlib, os, sys
-packages = ['numpy', 'pandas','names','faker']
+packages = ['numpy', 'pandas','faker']
 for package in packages:
   try:
     module = importlib.__import__(package)
@@ -16,13 +16,13 @@ for package in packages:
     module = importlib.__import__(package)
 
 rows = 10000
-import random, names, decimal, string, csv, datetime, numpy as np, pandas as pd
+import random, decimal, string, csv, datetime, numpy as np, pandas as pd
 from faker import Faker
 fake=Faker()
 
 customerid = np.array([''.join(random.choice(string.ascii_uppercase) for _ in range(2)) + ''.join(random.choice(string.digits) for _ in range(2)) for _ in range(rows)])
-firstname = np.array([''.join(names.get_first_name()) for _ in range(rows)])
-lastname = np.array([''.join(names.get_last_name()) for _ in range(rows)])
+firstname = np.array([''.join(fake.first_name()) for _ in range(rows)])
+lastname = np.array([''.join(fake.last_name()) for _ in range(rows)])
 phone = np.array([''.join(fake.phone_number()) for _ in range(rows)])
 street = np.array([''.join(fake.street_address()) for _ in range(rows)])
 city = np.array([''.join(fake.city()) for _ in range(rows)])
