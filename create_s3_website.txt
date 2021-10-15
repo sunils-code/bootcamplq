@@ -1,0 +1,46 @@
+### Create static website on S3 bucket using API from AWS CLI
+### Query list of buckets using Python SDK
+
+
+# Get AWS Credentials (discussed later: "aws configure" command)
+# Install AWS CLI or use CloudShell (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+# Install AWS SDK for Python (https://aws.amazon.com/sdk-for-python/)
+pip install boto3
+
+
+# Create S3 bucket and configure website
+# http://[bucket_name].[s3-website]-[us-east-1].amazonaws.com/
+$bucketname="awsclass20210730b"
+aws s3 help
+aws s3api help
+aws s3api create-bucket --bucket $bucketname --acl public-read
+aws s3 ls
+aws s3 cp index.html s3://$bucketname --acl public-read
+aws s3 cp error.html s3://$bucketname --acl public-read
+aws s3 website s3://$bucketname/ --index-document index.html --error-document error.html
+
+
+# Retrieve the list of existing buckets using the Client API
+import boto3
+bucketname = 'awsclass20210730b'
+s3client = boto3.client('s3')
+response = s3client.list_buckets()
+for bucket in response['Buckets']:
+    print(f'  {bucket["Name"]}')
+
+# Retrieve the list of objects in a bucket using the Client API
+import boto3
+s3client = boto3.client('s3')
+response = s3client.list_objects_v2(Bucket=bucketname)
+for content in response['Contents']:
+    print(content['Key'])
+
+
+# Retrieve the list of objects in a bucket using the Resource API
+import boto3
+s3resource = boto3.resource('s3')
+bucket = s3resource.Bucket(bucketname)
+for obj in bucket.objects.all():
+    print(obj.key)
+
+
