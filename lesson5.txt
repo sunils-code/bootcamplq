@@ -1,0 +1,27 @@
+import socket
+
+# Server
+server = socket.socket(socket.AF_NET, socket.SOCK_STREAM)
+host = ''
+port= 8000
+server.bind(host, port)
+server.listen(5)
+client, addr = server.accept()
+
+# Client
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = socket.gethostbyname(“localhost”)
+port = 8000
+s.connect((host, port))
+
+# Serialization
+output = str.encode(json.dumps(data))
+client.send(output)
+data = client.recv(1024)
+text = json.loads(bytes.decode(data))
+
+
+
+
+
