@@ -1,0 +1,22 @@
+import os
+
+os.path.isdir("c:/tmp")
+os.getcwd()
+os.listdir("c:/tmp")
+os.path.isfile("datafile.txt")
+
+names_file = open("datafile.txt", "w")
+names_file.write("John,Brown,33\n")
+names_file.write("Matthew,Patterson,29\n")
+names_file.write("William,Johnson,22\n")
+names_file.close()
+
+names_file = open("datafile.txt", "r")
+names = names_file.read()
+names_file.close()
+
+
+import  mysql.connector
+newdb = mysql.connector.connect(host="localhost",user="carsdbaccess","QDS342!!$")
+cursor = newdb.cursor()
+mycursor.execute ( "CREATE DATABASE mydatabase" )
