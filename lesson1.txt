@@ -1,0 +1,19 @@
+class Car:
+   def __init__(self, make, model):
+      self.make = make
+      self.model = model
+
+class Sedan(Car):
+   def __init__(self, make, model, doors, seats):
+      super(Sedan, self).__init__(make, model)
+      self.doors = doors
+      self.seats = seats
+
+car1 = Sedan("Tesla", "Model T", 4, 5)
+
+
+
+
+
+
+

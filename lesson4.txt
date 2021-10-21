@@ -17,6 +17,6 @@ names_file.close()
 
 
 import  mysql.connector
-newdb = mysql.connector.connect(host="localhost",user="carsdbaccess","QDS342!!$")
+newdb = mysql.connector.connect(host="localhost",user="user1","Password")
 cursor = newdb.cursor()
 mycursor.execute ( "CREATE DATABASE mydatabase" )
