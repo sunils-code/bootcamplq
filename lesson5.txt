@@ -1,3 +1,15 @@
+### python -m pip install requests
+###
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="wwproducts",
+    auth_plugin = "mysql_native_password")
+###
+
 import socket
 
 # Server

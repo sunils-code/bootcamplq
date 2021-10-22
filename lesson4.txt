@@ -1,3 +1,5 @@
+### mysql -uroot -ppassword | mysql -uroot -p
+
 import os
 
 os.path.isdir("c:/tmp")
