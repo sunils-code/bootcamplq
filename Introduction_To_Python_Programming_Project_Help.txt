@@ -1,0 +1,12 @@
+Introduction To Python Programming Resources:
+
+Explore Python on AWS
+https://aws.amazon.com/developer/language/python/
+
+Hello World App:
+https://lab.github.com/githubtraining/github-actions:-hello-world
+
+Python Tutorial & Labs:
+https://github.com/neiltucker/bootcamplq/blob/main/Python_Tutorial_MC.pdf
+
+
