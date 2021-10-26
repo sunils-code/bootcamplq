@@ -9,4 +9,6 @@ https://lab.github.com/githubtraining/github-actions:-hello-world
 Python Tutorial & Labs:
 https://github.com/neiltucker/bootcamplq/blob/main/Python_Tutorial_MC.pdf
 
+Building Python Web Apps with MongoDB
+https://www.mongodb.com/presentation/building-python-web-apps
 
